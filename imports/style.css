@@ -65,7 +65,7 @@ color:rgba(242, 231, 28, 0.9);
   text-align: center;
   padding-top: 10%;
   font-size:110px;
-  color:rgba(66,179,194, 0.6);
+  color:rgba(255, 0, 47, 0.9);
   font-weight: bold;
 }
 .subTit{
@@ -103,7 +103,7 @@ color:rgba(242, 231, 28, 0.9);
   padding-top:8%;
   text-align: center;
   font-style: oblique;
-  color:white;
+ color:rgba(242, 231, 28, 0.9);
 }
 
 .btn-group{
@@ -113,12 +113,11 @@ color:rgba(242, 231, 28, 0.9);
 
 .loc{
   padding-top:5%;
-  color:white;
+  color:rgba(242, 231, 28, 0.9);
 }
 
 .escoge{
-  color:white;
-
+  color:rgba(242, 231, 28, 0.9);
 }
 
 ul li{
@@ -128,7 +127,7 @@ ul li{
 }
 
 .infoReservas{
-  color:white;
+  color:rgba(242, 231, 28, 0.9);
 }
 .inputText{
   text-align: center;

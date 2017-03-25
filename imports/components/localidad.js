@@ -15,7 +15,7 @@ export default class Localidad extends Component {
   	render()
   	{
   		return(
-  			<button className="btn btn-success" onClick={()=>this.localidadId(this.props.localidad._id)}>{this.props.localidad.ubicacion}</button>)
+  			<button className="btn btn-primary actives" href=".oculto" onClick={()=>this.localidadId(this.props.localidad._id)}>{this.props.localidad.ubicacion}</button>)
   	}
     
   	localidadId(loc)

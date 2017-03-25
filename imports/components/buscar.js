@@ -25,7 +25,7 @@
     render() {
       return (
         <div className="container oculto">
-        <h1 className="verde">
+        <h1 className="amarillo">
         {this.props.reserva} en tu cancha favorita:
         </h1>
         <div className='row'>
@@ -34,7 +34,7 @@
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(8)}>Fútbol 8</button>
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(11)}>Fútbol 11</button>
         </div>
-        <h3 className="verde">{this.state.descripcion}<strong>{this.state.tipo}</strong></h3>
+        <h3 className="amarillo">{this.state.descripcion}<strong>{this.state.tipo}</strong></h3>
         
         {this.state.reservas.map(reserva => {
           

@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import Localidad from './localidad'
-const URL="https://futbolyabackend.herokuapp.com/";
+import {LocalidadM} from '../api/localidades.js'
 export default class Localidades extends Component {
   constructor(props){
 
@@ -16,19 +16,20 @@ export default class Localidades extends Component {
   }
 
   render() {
+
     return (      
       <div className="container">
       <h2 className="primero">¿Qué deseas hacer?</h2>
       <div className="btn-group"  data-toggle="buttons-radio">
       <button className="btn btn-primary active" onClick={()=>{this.tipo(1)}}>Buscar Equipo</button>
-      <button className="btn active" onClick={()=>{this.tipo(2)}}>Reclutar Equipo</button>
+      <button className="btn btn-danger active" onClick={()=>{this.tipo(2)}}>Reclutar Equipo</button>
       </div>
       <br></br>
       <br></br>
       <h2 className="loc">{this.state.localidadH}</h2>
       <p className="escoge">{this.state.escoge}</p>
       <ul>
-      <div className="recipeList">
+      <div className="h">
       {this.state.localidades.map(localidad => {
         return (
           <li key={localidad._id}>
@@ -73,12 +74,13 @@ export default class Localidades extends Component {
     }
 
     obtenerLocalidades() {
-      axios.get(URL+ "localidades")
-      .then(response => {
-        this.setState({
-          localidades: response.data
-        })
-      })
+      var locals=LocalidadM.find({});
+      console.log(locals);
+      console.log(locals.fetch());
+      this.setState(
+      {
+        localidades:locals.fetch()
+      });
     }
 
   }

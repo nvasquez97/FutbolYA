@@ -1,11 +1,7 @@
   'use strict';
   import React, { Component } from 'react';
 
-  export default class FutbolYa extends Component {
-
-     /**les recomiendo para estas funcionalidades de FutbolYa crear componentes que renderizen aqui mismo. Los pueden crear
-         desde el render y ellos a su vez crearan los espacios para llenar y etc si el usuario asi lo desea.. si no lo hacen asi
-         no me queda tan claro como podrian hacer los cambios entre paths con react :/ */
+  export default class FutbolYa extends Component {     
 
     render() {
       return (

@@ -41,7 +41,7 @@ export default class Cancha extends Component{
               <div className="infoReservas">
             <p>Escribe tu nombre y haz tu reserva:</p>
               <input onChange={event=>this.usuario(event.target.value)}></input>
-              <button className="btn btn-success" onClick={this.reclutar.bind(this)}>Reserva</button>
+              <button className="btn btn-danger" onClick={this.reclutar.bind(this)}>Reserva</button>
             </div>
             </div>
             </div>
