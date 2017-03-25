@@ -1,0 +1,143 @@
+.futbolYa{
+    background: url("img/futbolfondo.jpeg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.todo{
+  display: none;
+}
+.row
+{
+  max-width:100%;
+  text-align: center;
+}
+.reservaI{
+  float:left;
+  width:50%;
+}
+.reservaD{
+  float:right;
+  width:50%;
+  text-align: center;
+}
+.inforr{
+  display:none;
+}
+.imgCancha
+{
+  max-width:100px;
+  padding:10px;
+}
+.reservas{
+  display:inline-block;
+}
+.reserva{
+  background-color: rgba(250,250,250,0.3);
+  margin-bottom: 10px;
+}
+.buscar{
+    background: url("img/futbolfondo1.jpeg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+}
+.verde
+{
+  color:rgba(73, 255, 0, 0.8);
+}
+.blanco
+{
+  color:white;
+}
+.tit{
+  text-align: center;
+  padding-top: 10%;
+  font-size:110px;
+  color:rgba(73, 255, 0, 0.8);
+  font-weight: bold;
+}
+.subTit{
+  padding-top: 10%;
+  color:rgba(250, 250, 250, 0.9);
+  text-align: justify;
+  font-weight: bold;
+}
+.baja
+{
+  padding-top: 2.5%;
+  font-size: 20px;
+  text-align: center;
+  color:white;
+}
+.loading{
+  text-align: center;
+  color: grey;
+}
+#centro{
+  padding-top: 20%;
+}
+.derecha{
+  padding-top: 2.5%;
+  text-align: right;
+  color:rgba(73, 255, 0, 0.7);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.localidad{
+  background-color: rgb(61,60,60);
+}
+
+.primero{
+  padding-top:8%;
+  text-align: center;
+  font-style: oblique;
+  color:white;
+}
+
+.btn-group{
+  padding-top:5%;
+  padding-left: 30%;
+}
+
+.loc{
+  padding-top:5%;
+  color:white;
+}
+
+.escoge{
+  color:white;
+
+}
+
+ul li{
+  color:white;
+  float:left;
+  margin: 20px 20px 20px 20px;
+}
+
+.infoReservas{
+  color:white;
+}
+.inputText{
+  text-align: center;
+}
+#info{
+  color:white;
+}
+.oculto{
+  display: none;
+}
+.ve{
+    color:rgba(250, 250, 250, 0.9);
+}
+
+.ve:hover{
+    color:rgba(73, 255, 0, 0.8);
+}
