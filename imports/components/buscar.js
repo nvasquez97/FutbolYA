@@ -38,8 +38,7 @@
         <h3 className="amarillo">{this.state.descripcion}<strong>{this.state.tipo}</strong></h3>
         
         {this.state.reservas.map(reserva => {
-          
-          return <Reserva key={reserva.key} reserva={reserva} />
+          return <Reserva key={reserva.key} reserva={reserva} nombreC={this.obtenerNombreCancha(reserva.id_cancha)}/>
         })}        
         {this.state.canchas.map(cancha => {
           return <Cancha key={cancha.key} cancha={cancha} infoReserva={this.infoReserva.bind(this)}/>
@@ -63,13 +62,25 @@
        document.getElementsByClassName('oculto')[0].style.display='none';
       }
 
+      obtenerNombreCancha(idcancha)
+      {
+          var lac =Canchas.find({"_id":idcancha});
+          var nombreC =lac.fetch();
+          return nombreC[0].nombreSitio;
+      }
+
       obtenerReservas(num) {
         var idloc=this.props.localidad;
         if(this.props.reserva==='Busca')
         {
-          let reservar = Reservas.find({'id_localidad':idloc,'tipo':num})
+          let lcanchas = Canchas.find({'id_localidad':idloc,'tipo':num}).fetch();
+          var reservar = [];
+          lcanchas.map(cancha =>
+          {
+            reservar =reservar.concat(Reservas.find({'id_cancha':cancha._id}).fetch());        
+          });
            this.setState({
-             reservas: reservar.fetch(),
+             reservas: reservar,
              canchas:[],
               tipo: 'Fútbol '+num,
               descripcion:'Mira reservas para '

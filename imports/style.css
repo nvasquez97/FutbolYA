@@ -48,7 +48,7 @@
 
 }
 .amarillo{
-color:rgba(242, 231, 28, 0.9);
+color:white;
 }
 .rojo{
   color:rgba(255, 0, 47, 0.9);
@@ -68,18 +68,18 @@ color:rgba(242, 231, 28, 0.9);
   text-align: center;
   padding-top: 10%;
   font-size:110px;
-  color:rgba(255, 0, 47, 0.9);
+  color:rgba(255, 0, 47, 0.7);
   font-weight: bold;
 }
 .subTit{
   padding-top: 10%;
-  color:rgba(242, 231, 28, 0.9);
+  color:rgba(256,256,256, 0.9);
   text-align: justify;
   font-weight: bold;
 }
 .baja
 {
-  color:rgba(242, 231, 28, 0.9);
+  color:white;
   padding-top: 2.5%;
   font-size: 20px;
   text-align: center;
@@ -106,7 +106,7 @@ color:rgba(242, 231, 28, 0.9);
   padding-top:8%;
   text-align: center;
   font-style: oblique;
- color:rgba(242, 231, 28, 0.9);
+ color:white;
 }
 
 .btn-group{
@@ -116,11 +116,11 @@ color:rgba(242, 231, 28, 0.9);
 
 .loc{
   padding-top:5%;
-  color:rgba(242, 231, 28, 0.9);
+  color:white;
 }
 
 .escoge{
-  color:rgba(242, 231, 28, 0.9);
+  color:white;
 }
 
 ul li{

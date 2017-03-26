@@ -23,7 +23,7 @@ export default class Cancha extends Component{
     return (
       <div>
      <div className='container reserva'>
-        <div className='reservaI blanco'>
+        <div className='reservaI amarillo'>
           <h4>
             NombreSitio: {this.props.cancha.nombreSitio}
           </h4>
