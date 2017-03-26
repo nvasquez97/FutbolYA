@@ -37,7 +37,7 @@ export default class Cancha extends Component{
         </div>
         <div className='reservaD'>
             <div className="fotoSitio">
-              <img src="./style/img/cancha.jpg" className="img-responsive imgCancha" alt="fotoCancha"></img>                              </div>
+              <img src="/img/cancha.jpg" className="img-responsive imgCancha" alt="fotoCancha"></img>                              </div>
               <div className="infoReservas">
             <p>Escribe tu nombre y haz tu reserva:</p>
               <input onChange={event=>this.usuario(event.target.value)}></input>

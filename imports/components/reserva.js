@@ -34,7 +34,7 @@
             </div>
             <div className='reservaD'>
               <div className="fotoSitio">
-                <img src="./style/img/cancha.jpg" className="img-responsive imgCancha" alt="fotoCancha"></img>                              </div>
+                <img src="img/cancha.jpg" className="img-responsive imgCancha" alt="fotoCancha"></img>                              </div>
               <div>
                 <button className="btn btn-danger">Reserva Cupo</button>
               </div>
