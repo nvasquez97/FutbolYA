@@ -130,10 +130,10 @@ ul li{
 }
 
 .infoReservas{
-  color:rgba(242, 231, 28, 0.9);
+  color:white;
 }
 .inputText{
-  text-align: center;
+  color:black;
 }
 #info{
   color:white;

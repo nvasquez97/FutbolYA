@@ -38,7 +38,7 @@
               <div className="fotoSitio">
                 <img src="img/cancha.jpg" className="img-responsive imgCancha" alt={this.state.nombreCancha}></img>                              </div>
               <div>
-                <button className="btn btn-danger" onClick={this.obtenerNombreCancha.bind(this)} >Reserva Cupo</button>
+                <button className="btn btn-danger" onClick={this.reservarCupo.bind(this)} >Reserva Cupo</button>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
       }
 
       reservarCupo(){
-
+        
       }
       obtenerNombreCancha()
       {
