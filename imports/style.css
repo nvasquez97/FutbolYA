@@ -9,6 +9,9 @@
 .todo{
   display: none;
 }
+span{
+  color:rgba(255, 0, 47, 0.7);
+}
 .row
 {
   max-width:100%;
