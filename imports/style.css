@@ -70,12 +70,14 @@ color:white;
   font-size:110px;
   color:rgba(255, 0, 47, 0.7);
   font-weight: bold;
+  font-family: 'Lobster';
 }
 .subTit{
   padding-top: 10%;
   color:rgba(256,256,256, 0.9);
   text-align: justify;
   font-weight: bold;
+
 }
 .baja
 {
@@ -148,6 +150,7 @@ ul li{
 }
 .ve{
     color:rgba(255, 0, 47, 0.9);
+    font-family: 'Lobster';
 }
 
 .ve:hover{
