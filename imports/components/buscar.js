@@ -25,20 +25,21 @@
 
     render() {
       return (
-        <div className="container oculto">
+        <div className="container oculto" id="b1">
         <h1 className="rojo">
         <strong>{this.props.reserva}</strong> en tu cancha favorita:
         </h1>
         <div className='row'>
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(5)}>Fútbol 5</button>
-        <button className="btn btn-default" onClick={()=>this.obtenerReservas(7)}>Fútbol 7</button>
+        <button className="btn btn-danger active" onClick={()=>this.obtenerReservas(7)}>Fútbol 7</button>
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(8)}>Fútbol 8</button>
-        <button className="btn btn-default" onClick={()=>this.obtenerReservas(11)}>Fútbol 11</button>
+        <button className="btn btn-danger active" onClick={()=>this.obtenerReservas(11)}>Fútbol 11</button>
         </div>
         <h3 className="amarillo">{this.state.descripcion}<strong>{this.state.tipo}</strong></h3>
         
         {this.state.reservas.map(reserva => {
-          return <Reserva key={reserva.key} reserva={reserva} nombreC={this.obtenerNombreCancha(reserva.id_cancha)}/>
+          if(reserva.cupos>0)
+          return <Reserva key={reserva.key} reserva={reserva} nombreC={this.obtenerNombreCancha(reserva.id_cancha)} infoReserva={this.infoReserva.bind(this)}/>
         })}        
         {this.state.canchas.map(cancha => {
           return <Cancha key={cancha.key} cancha={cancha} infoReserva={this.infoReserva.bind(this)}/>
@@ -64,7 +65,7 @@
 
       obtenerNombreCancha(idcancha)
       {
-          var lac =Canchas.find({"_id":idcancha});
+          var lac =Canchas.find({"key":idcancha});
           var nombreC =lac.fetch();
           return nombreC[0].nombreSitio;
       }
@@ -77,24 +78,49 @@
           var reservar = [];
           lcanchas.map(cancha =>
           {
-            reservar =reservar.concat(Reservas.find({'id_cancha':cancha._id}).fetch());        
+            reservar =reservar.concat(Reservas.find({'id_cancha':cancha.key}).fetch());        
           });
+          if(reservar.length>0)
+          {
            this.setState({
              reservas: reservar,
              canchas:[],
               tipo: 'Fútbol '+num,
               descripcion:'Mira reservas para '
-            })
+            }) 
+          }
+           else
+           {
+            this.setState({
+             reservas: [],
+             canchas:[],
+              tipo: 'Fútbol '+num+ ' en tu localidad',
+              descripcion:'No hay reservas para '
+            }) 
+           }
         }
         else
         {
-          let recluta = Canchas.find({'id_localidad':idloc,'tipo':num})
+          let recluta = Canchas.find({'id_localidad':idloc,'tipo':num});
+          if(recluta.fetch().length>0)
+          {
             this.setState({
               canchas: recluta.fetch(),
               reservas:[],
               tipo: 'Fútbol '+num,
               descripcion:'Intenta reclutar en: '
-            })
+            });
+          }
+          else
+          {
+            this.setState({
+              canchas: [],
+              reservas:[],
+              tipo: 'Fútbol '+num+' en tu localidad',
+              descripcion:'No hay canchas de '
+            });     
+          }
+          
         }
       }
     }

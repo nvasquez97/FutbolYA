@@ -1,11 +1,7 @@
   'use strict';
   import React, { Component } from 'react';
   import {Canchas} from '../api/canchas.js'
-  const URL="https://futbolyabackend.herokuapp.com/";
-  /*Considero que  tienen los componentes bien definidos, solo que les falta un poco unirlo todo y hacer uso del backend
-    para consumir los servicios y desplegarlos segun el usuario*/
-
-
+  import {Reservas} from '../api/reservas.js'
   export default class Reserva extends Component {
       constructor(props)
       {
@@ -38,7 +34,7 @@
               <div className="fotoSitio">
                 <img src="img/cancha.jpg" className="img-responsive imgCancha" alt={this.state.nombreCancha}></img>                              </div>
               <div>
-                <button className="btn btn-danger" onClick={this.reservarCupo.bind(this)} >Reserva Cupo</button>
+                <button className="btn btn-danger" onClick={this.reservarCupo.bind(this)} href="#">Reserva Cupo</button>
               </div>
             </div>
           </div>
@@ -46,11 +42,15 @@
       }
 
       reservarCupo(){
-        
+        var cuposN = this.props.reserva.cupos -1;
+        Reservas.update({"_id":this.props.reserva._id},
+        {
+          "key":this.props.reserva.key,
+          "precio":this.props.reserva.precio,
+          "cupos":cuposN,
+          "id_usuario":this.props.reserva.id_usuario,
+          "id_cancha":this.props.reserva.id_cancha
+        });
+        this.props.infoReserva(this.props.reserva.key,this.props.reserva.id_cancha);
       }
-      obtenerNombreCancha()
-      {
-        
-      }
-
   }

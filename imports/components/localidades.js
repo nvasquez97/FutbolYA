@@ -21,12 +21,12 @@ export default class Localidades extends Component {
       <div className="container">
       <h2 className="primero">¿Qué deseas hacer?</h2>
       <div className="btn-group"  data-toggle="buttons-radio">
-      <button className="btn btn-primary active" onClick={()=>{this.tipo(1)}}>Buscar Equipo</button>
-      <button className="btn btn-danger active" onClick={()=>{this.tipo(2)}}>Reclutar Equipo</button>
+      <button className="btn btn-default active" onClick={()=>{this.tipo(1)}} href="#l1">Buscar Equipo</button>
+      <button className="btn btn-danger active" onClick={()=>{this.tipo(2)}}  href="#l1">Reclutar Equipo</button>
       </div>
       <br></br>
       <br></br>
-      <h2 className="loc">{this.state.localidadH}</h2>
+      <h2 className="loc" id="l1">{this.state.localidadH}</h2>
       <p className="escoge">{this.state.escoge}</p>
       <ul>
       <div className="h">

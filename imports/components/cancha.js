@@ -1,6 +1,7 @@
 'use strict';
 import React, {Component } from 'react';
-const URL="https://futbolyabackend.herokuapp.com/";
+import {Usuarios} from '../api/usuarios.js'
+import {Reservas} from '../api/reservas.js'
 export default class Cancha extends Component{
 
 
@@ -41,7 +42,7 @@ export default class Cancha extends Component{
               <div className="infoReservas">
             <p>Escribe tu nombre y haz tu reserva:</p>
               <input onChange={event=>this.usuario(event.target.value)} className="inputText"></input>
-              <button className="btn btn-danger" onClick={this.reclutar.bind(this)}>Reserva</button>
+              <button className="btn btn-danger" onClick={this.reclutar.bind(this)} href="#">Reserva</button>
             </div>
             </div>
             </div>
@@ -51,58 +52,45 @@ export default class Cancha extends Component{
   }
 
   usuario(val)
-  {
+  {    
     this.setState(
     {
       nombreU:val
     });
   }
 
-  showreclutar()
-  {
-    var pos =0;
-    console.log(this.props.pos);
-      document.getElementsByClassName('infoReservas')[this.props.pos].style.display='block';
-  }
-
   reclutar()
   {
-      var idR=this.randomBetween(100,10000);
-    var idC=this.props.cancha._id;
-    var key=idR;
-    var precio=this.props.cancha.precio;
+    var key=this.randomBetween(100,10000);
+    var idC=this.props.cancha.key;
+    var idR=key+"";
+    var precio=2000;
     var cupos = (this.props.cancha.tipo)*2 -1;
 
-    var nombreUsuario=event.target.value;
-    var idU=this.randomBetween(100,10000);
-
+    var nombreUsuario=this.state.nombreU;
+    var keyU=this.randomBetween(100,10000);
+    var idU=keyU+"";
     //Post Reserva a nombre de..
-    axios.post(URL+'usuarios',
+    Usuarios.insert(
     {
       "_id": idU,
+      "key": keyU,
       "nombre":nombreUsuario
-    }).then(
-    response=>{
+    });
       
-    })
-    
-
-    console.log(idR);
-    axios.post(URL+'reservas',
-      //Post Nueva Reserva
-    {
+      
+    //Post Nueva Reserva
+    Reservas.insert(
+      {
       "_id": idR,
       "key": key,
       "precio": precio,
       "cupos": cupos,
-      "id_usuario": idU,
+      "id_usuario": keyU,
       "id_cancha": idC
-    }).then(
-    response=>{
-      this.props.infoReserva(idR, idC);
-    })
-    
-    
+    }
+    );
+    this.props.infoReserva(key,idC);
   }
 
   // Tomado de https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
