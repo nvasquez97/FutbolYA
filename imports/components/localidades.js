@@ -79,10 +79,7 @@ export default class Localidades extends Component {
     }
 
     obtenerLocalidades() {
-      
-      var locals=LocalidadM.find({});
-      console.log(locals);
-      console.log(locals.fetch());
+      var locals=LocalidadM.find({});      
       this.setState(
       {
         localidades:locals.fetch()
