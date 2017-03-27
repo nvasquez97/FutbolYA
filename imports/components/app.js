@@ -5,6 +5,7 @@
   import Buscar from './buscar';
   import InfoReservas from './infoReservas';
   import Cancha from './cancha';
+  import InfoPartidos from './infoPartidos';
 
   export default class App extends Component {
 
@@ -24,17 +25,13 @@
   		return(
   			<div>
   			<div className="futbolYa">
-  				<FutbolYa irAReserva={this.irAReserva.bind(this)}/>
+  				<FutbolYa irACuadro={this.irACuadro.bind(this)}/>
   			</div>
   			<div className="localidad">
   				<Localidades obtenerReservas={this.obtenerReservas.bind(this)}/>
   			</div>
   			<div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)}/></div>
-        <div className="inforr">
-        <p>
-        Tu reserva tiene el id: {this.state.idReserva}
-        </p>
-        </div>
+        <InfoReservas infoReserva={this.state.idReserva} />
   			</div>
   			);
   	}
@@ -43,7 +40,10 @@
     {
       document.getElementsByClassName('oculto')[0].style.display='none';
       document.getElementsByClassName('localidad')[0].style.display='none';
-      document.getElementsByClassName('inforr')[0].style.display='block';
+     
+    }
+    irACuadro(){
+       document.getElementsByClassName('inforr')[0].style.display='block';
     }
     infoReserva(num, idC)
     {

@@ -5,7 +5,7 @@ export default class InfoReservas extends Component {
 	Podrian mandarle por parametro el id de la reserva y él buscar en la base de datos la info y llenar la tabla del padre */
 	render() {
 		return (
-			<div className="container inforr" >
+			<div className="container" >
 				<h1 id="info">Consulta tu Reserva</h1>
 				<div className="table-responsive">
 				<table className="table table-hover table-inverse">
