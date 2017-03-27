@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-const URL="https://futbolyabackend.herokuapp.com/";
 
 export default class Localidad extends Component {
   	
