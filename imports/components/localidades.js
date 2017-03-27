@@ -11,12 +11,12 @@ export default class Localidades extends Component {
       tipo:'',
       localidadH:'',
       escoge:'',
-      selected: false
+      selected: false,
+      cargando:-1
     }
   }
 
   render() {
-
     return (      
       <div className="container">
       <h2 className="primero">¿Qué deseas hacer?</h2>
@@ -45,11 +45,11 @@ export default class Localidades extends Component {
 
     tipo(num)
     {
-      this.obtenerLocalidades();
+      
       var tip=num===1?'Busca':'Recluta';
       this.setState({
         tipo: tip,
-        escoge:'Escoge tu localidad:',
+        escoge:'Cargando localidades...',
         localidadH:'Localidades'});
 
       if(this.state.selected){
@@ -59,6 +59,11 @@ export default class Localidades extends Component {
           selected:false
         });
       }
+      this.obtenerLocalidades();
+      this.setState({
+        tipo: tip,
+        escoge:'Escoge tu localidad: ',
+        localidadH:'Localidades'});
     }
 
     reservasL(num)
@@ -74,6 +79,7 @@ export default class Localidades extends Component {
     }
 
     obtenerLocalidades() {
+      console.log('pase');
       var locals=LocalidadM.find({});
       this.setState(
       {
