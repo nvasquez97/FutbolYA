@@ -8,7 +8,7 @@
         <div className="container">
         <h1 className="tit">Fútbol Ya!</h1>
         <h3 className="subTit">
-          <span>Fútbol Ya</span> es una página que te permite encontrarte con todos los espacios que quieras para jugar fútbol, puedes encontrar equipos que estén buscando gente, o puedes crear tu propia sesión reservando una cancha e invitando a los demás a que se animen a jugar contigo. ¡Inténtalo!
+          <span><strong>Fútbol Ya</strong></span> es una página que te permite encontrarte con todos los espacios que quieras para jugar fútbol, puedes encontrar equipos que estén buscando gente, o puedes crear tu propia sesión reservando una cancha e invitando a los demás a que se animen a jugar contigo. ¡Inténtalo!
         </h3>
         <p className="derecha amarillo">
           ¿Ya tienes equipo? <a onClick={this.props.irACuadro} href="#" title="Haz click aqui para ir a tu reserva" className="ve">
