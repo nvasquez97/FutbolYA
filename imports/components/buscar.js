@@ -16,10 +16,9 @@
         canchas:[],
         id:'',
         tipo:'',
-        localidades:'',
         descripcion: '',
-        estado:''
-
+        estado:'',
+        localidad:''
       }
     }
 
@@ -35,7 +34,7 @@
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(8)}>Fútbol 8</button>
         <button className="btn btn-danger active" onClick={()=>this.obtenerReservas(11)}>Fútbol 11</button>
         </div>
-        <h3 className="amarillo">{this.state.descripcion}<strong><span>{this.state.tipo}</span></strong></h3>
+        <h3 className="amarillo">{this.state.descripcion}<strong><span>{this.state.tipo}</span>{this.state.localidad}</strong></h3>
         
         {this.state.reservas.map(reserva => {
           if(reserva.cupos>0)
@@ -55,7 +54,6 @@
         canchas:[],
         id:'',
         tipo:'',
-        localidades:'',
         descripcion: '',
         estado:''
       });
@@ -86,7 +84,8 @@
              reservas: reservar,
              canchas:[],
               tipo: 'Fútbol '+num,
-              descripcion:'Mira reservas para '
+              descripcion:'Mira reservas para ',
+              localidad:''
             }) 
           }
            else
@@ -94,7 +93,8 @@
             this.setState({
              reservas: [],
              canchas:[],
-              tipo: 'Fútbol '+num+ ' en tu localidad',
+              tipo: 'Fútbol '+num,
+              localidad:' en tu localidad',
               descripcion:'No hay reservas para '
             }) 
            }
@@ -108,6 +108,7 @@
               canchas: recluta.fetch(),
               reservas:[],
               tipo: 'Fútbol '+num,
+              localidad:'',
               descripcion:'Intenta reclutar en: '
             });
           }
@@ -116,7 +117,8 @@
             this.setState({
               canchas: [],
               reservas:[],
-              tipo: 'Fútbol '+num+' en tu localidad',
+              tipo: 'Fútbol '+num,
+              localidad:' en tu localidad',
               descripcion:'No hay canchas de '
             });     
           }
