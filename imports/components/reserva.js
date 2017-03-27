@@ -19,9 +19,9 @@
         return(
           <div className='container reserva'>
             <div className='reservaI amarillo'>
-              <h4>
+              <h3>
                 Cancha: {this.props.nombreC}
-              </h4>
+              </h3>
               <p>
                 Precio: ${this.props.reserva.precio}
                 <br></br>

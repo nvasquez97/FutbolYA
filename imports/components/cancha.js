@@ -25,9 +25,10 @@ export default class Cancha extends Component{
       <div>
      <div className='container reserva'>
         <div className='reservaI amarillo'>
-          <h4>
+          <h3>
             NombreSitio: {this.props.cancha.nombreSitio}
-          </h4>
+            <br></br>
+          </h3>
           <p>
           Dirección: {this.props.cancha.direccion}
           <br></br>
@@ -40,8 +41,8 @@ export default class Cancha extends Component{
             <div className="fotoSitio">
               <img src="/img/cancha.jpg" className="img-responsive imgCancha" alt="fotoCancha"></img>                              </div>
               <div className="infoReservas">
-            <p>Escribe tu nombre y haz tu reserva:</p>
-              <input onChange={event=>this.usuario(event.target.value)} className="inputText"></input>
+              <label htmlFor="nombre">Escribe tu nombre y haz tu reserva:</label>
+              <input onChange={event=>this.usuario(event.target.value)} className="inputText" id="nombre"></input>
               <button className="btn btn-danger" onClick={this.reclutar.bind(this)} href="#">Reserva</button>
             </div>
             </div>

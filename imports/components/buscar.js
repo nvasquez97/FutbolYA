@@ -35,7 +35,7 @@
         <button className="btn btn-default" onClick={()=>this.obtenerReservas(8)}>Fútbol 8</button>
         <button className="btn btn-danger active" onClick={()=>this.obtenerReservas(11)}>Fútbol 11</button>
         </div>
-        <h3 className="amarillo">{this.state.descripcion}<strong>{this.state.tipo}</strong></h3>
+        <h3 className="amarillo">{this.state.descripcion}<strong><span>{this.state.tipo}</span></strong></h3>
         
         {this.state.reservas.map(reserva => {
           if(reserva.cupos>0)
