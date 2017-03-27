@@ -44,7 +44,9 @@
     }
     irACuadro(){
        document.getElementsByClassName('inforr')[0].style.display='block';
+       document.getElementsByClassName('localidad')[0].style.display='none';
     }
+
     infoReserva(num, idC)
     {
       console.log('pasa');
