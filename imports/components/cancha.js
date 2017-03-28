@@ -2,6 +2,7 @@
 import React, {Component } from 'react';
 import {Usuarios} from '../api/usuarios.js'
 import {Reservas} from '../api/reservas.js'
+import {Partidos} from '../api/partidos.js'
 export default class Cancha extends Component{
 
 
@@ -71,6 +72,9 @@ export default class Cancha extends Component{
     var nombreUsuario=this.state.nombreU;
     var keyU=this.randomBetween(100,10000);
     var idU=keyU+"";
+
+    var keyP=this.randomBetween(100,10000);
+    var idP=keyp+'';
     //Post Reserva a nombre de..
     Usuarios.insert(
     {
@@ -89,6 +93,16 @@ export default class Cancha extends Component{
       "cupos": cupos,
       "id_usuario": keyU,
       "id_cancha": idC
+    }
+    );
+    //Post Nuevo Partido
+    Partidos.insert(
+      {
+      "_id": idP,
+      "key": keyP,
+      "marcador1": 0,
+      "marcador2": 0,
+      "id_reserva": key
     }
     );
     this.props.infoReserva(key,idC);
