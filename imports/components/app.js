@@ -31,7 +31,7 @@
   				<Localidades obtenerReservas={this.obtenerReservas.bind(this)}/>
   			</div>
   			<div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)}/></div>
-        <InfoReservas infoReserva={this.state.idReserva} />
+        <InfoReservas idReserva={this.getId.bind(this)} />
   			</div>
   			);
   	}
@@ -45,6 +45,11 @@
     irACuadro(){
        document.getElementsByClassName('inforr')[0].style.display='block';
        document.getElementsByClassName('localidad')[0].style.display='none';
+    }
+
+    getId()
+    {
+      return this.state.idReserva;
     }
 
     infoReserva(num, idC)
