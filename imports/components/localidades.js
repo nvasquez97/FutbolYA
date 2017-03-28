@@ -66,7 +66,7 @@ export default class Localidades extends Component {
         localidadH:'Localidades'});
     }
 
-    reservasL(num)
+    reservasL(num, nombreL)
     {
       this.props.obtenerReservas(this.state.tipo, num);
       if(!this.state.selected){

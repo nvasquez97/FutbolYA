@@ -6,7 +6,8 @@ export default class InfoReservas extends Component {
 	Podrian mandarle por parametro el id de la reserva y él buscar en la base de datos la info y llenar la tabla del padre */
 	render() {
 		return (
-			<div className="container inforr" >
+			<div className="inforr" >
+				<div className="container">
 				<h1 id="info">Consulta tu Reserva</h1>
 				<div className="table-responsive">
 				<table className="table table-bordered">
@@ -31,6 +32,7 @@ export default class InfoReservas extends Component {
 				</table>
 				</div>
 				<InfoPartidos mostrarPartidos={this.mostrarPartidos.bind(this)} />
+				</div>
 			</div>
 			);
 		}
@@ -38,7 +40,6 @@ export default class InfoReservas extends Component {
 
 mostrarPartidos(){
 	 document.getElementsByClassName('infoPartidos')[0].style.display='block';
-
 }
 
 }

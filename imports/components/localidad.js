@@ -19,7 +19,7 @@ export default class Localidad extends Component {
     
   	localidadId(loc)
   	{
-      this.props.reservasL(loc);
+      this.props.reservasL(loc, this.props.ubicacion);
   	}
 
 }

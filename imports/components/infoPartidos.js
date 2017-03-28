@@ -4,7 +4,7 @@ export default class InfoPartidos extends Component {
     
     render() {
         return (
-            <div className="container infoPartidos" >
+            <div className="infoPartidos" >
             <div className='row'>
             <div className='col-lg-10'>
             <h className="titulo">Lleva el puntaje de tu partido!</h>
