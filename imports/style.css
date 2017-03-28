@@ -30,6 +30,10 @@ span{
 }
 .inforr{
   display:none;
+  background-color: rgb(16,54,69);
+}
+.table-responsive{
+   background-color: rgb(16,54,69);
 }
 .imgCancha
 {
@@ -60,6 +64,7 @@ font-family:'Cabin';
   color:rgba(255, 0, 47, 0.7);
   font-family: 'Lobster';
 }
+
 .blanco
 {
   color:white;
@@ -103,7 +108,10 @@ font-family:'Cabin';
 .localidad{
   background-color: rgb(16,54,69);
 }
-
+.puntaje{
+  background-color: rgba(250,250,250,0.3);
+  margin-bottom: 10px;
+}
 .primero{
   padding-top:8%;
   text-align: center;
@@ -145,6 +153,9 @@ ul li{
 }
 #info{
   color:white;
+  font-family: 'Lobster';
+  padding-top:50px;
+  padding-bottom: 50px;
 }
 .oculto{
   display: none;
@@ -156,4 +167,49 @@ ul li{
 
 .ve:hover{
       color:rgba(16,54,69, 0.8);
+}
+
+.titulo{
+  padding-left:120px;
+  font-size:300%;
+  color:white;
+  font-family: 'Lobster';
+}
+.goles{
+  padding-left:20px;
+  font-size:40px;
+  font-weight: bold;
+}
+.agregar{
+  margin-left:35px;
+}
+.equipo{
+  padding-left:10px;
+  font-size: 40px;
+}
+
+.derechaD{
+  float:right;
+}
+.izquierda{
+  float:left;
+}
+th,td{
+  color:white;
+}
+
+.infoPartidos{
+  padding-top:10%;
+}
+
+.reservaPartido{
+  padding-top:35%;
+  font-family:'Lobster';
+  color:rgba(255, 0, 47, 0.7);
+  font-size:35px;
+  font-weight:bold;
+}
+
+#gol1 {
+  padding-left:2%;
 }

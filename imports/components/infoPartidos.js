@@ -1,35 +1,43 @@
 'use strict';
 import React, { Component } from 'react';
-export default class InfoReservas extends Component {
-	/*creo que el mejor metodo para hacer que les genere la tabla que ustedes desean con datos variables es crear un componente tablaReserva
-	Podrian mandarle por parametro el id de la reserva y él buscar en la base de datos la info y llenar la tabla del padre */
-	render() {
-		return (
-			<div className="container" >
-				<h1 id="info">Consulta tu Reserva</h1>
-				<div className="table-responsive">
-				<table className="table table-hover table-inverse">
-					<thead>
-					<tr>
-						<th>Id Reserva</th>
-						<th>Localidad</th>
-						<th>Cancha</th>
-						<th>Precio</th>
-						<th>Hora</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>45</td>
-						<td>Suba</td>
-						<td>Gataca</td>
-						<td>25000</td>
-						<td>11:30AM</td>
-					</tr>
-					</tbody>
-				</table>
-				</div>
-			</div>
-			);
-		}
-	}
+export default class InfoPartidos extends Component {
+    
+    render() {
+        return (
+            <div className="container infoPartidos" >
+            <div className='row'>
+            <div className='col-lg-10'>
+            <h className="titulo">Lleva el puntaje de tu partido!</h>
+            </div>
+            </div>
+            <div className="puntaje">
+            <h className="reservaPartido">Reserva: 1</h><br></br>
+            <br></br>
+            <div className='row'>
+            <div className='col-md-5'>
+            <div className="izquierda">
+            <label className="equipo">Equipo #1</label>
+            <label className="goles">3</label>
+            <i id="gol1" className="fa fa-futbol-o fa-3x"></i>
+            </div>
+            </div>
+            <div className='col-md-1'>
+            <div className="centro">
+            <p>
+            VS.
+            </p>
+            </div>
+            </div>
+            <div className='col-md-5'>
+            <div className="derechaD">
+            <label className="equipo">Equipo #2</label>
+            <label className="goles">2</label>
+            <i className="fa fa-futbol-o fa-3x"></i>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            );
+    }
+}
