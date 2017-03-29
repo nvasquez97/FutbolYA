@@ -6,6 +6,7 @@
   import InfoReservas from './infoReservas';
   import Cancha from './cancha';
   import InfoPartidos from './infoPartidos';
+  import {Reservas} from '../api/reservas.js'
 
   export default class App extends Component {
 
@@ -31,7 +32,7 @@
   				<Localidades obtenerReservas={this.obtenerReservas.bind(this)}/>
   			</div>
   			<div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)}/></div>
-        <InfoReservas idReserva={this.getId.bind(this)} />
+        <InfoReservas />
   			</div>
   			);
   	}
@@ -54,9 +55,11 @@
 
     infoReserva(num, idC)
     {
-      console.log('pasa');
+      console.log("Pasa"); 
+      var reser=Reservas.find({'key':num}).fetch()[0];
       this.setState({
-        idReserva:num
+        idReserva:num,
+        reserv:reser
       });
       document.getElementsByClassName('inforr')[0].style.display='block';
       document.getElementsByClassName('oculto')[0].style.display='none';

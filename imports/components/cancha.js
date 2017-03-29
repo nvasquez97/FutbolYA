@@ -74,7 +74,7 @@ export default class Cancha extends Component{
     var idU=keyU+"";
 
     var keyP=this.randomBetween(100,10000);
-    var idP=keyp+'';
+    var idP=keyP+'';
     //Post Reserva a nombre de..
     Usuarios.insert(
     {

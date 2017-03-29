@@ -7,7 +7,7 @@ export default class InfoPartidos extends Component {
             <div className="infoPartidos" >
             <div className='row'>
             <div className='col-lg-10'>
-            <h className="titulo">Lleva el puntaje de tu partido!</h>
+            <h1 className="titulo">Lleva el puntaje de tu partido!</h1>
             </div>
             </div>
             <div className="puntaje">

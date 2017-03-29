@@ -170,8 +170,7 @@ ul li{
 }
 
 .titulo{
-  padding-left:120px;
-  font-size:300%;
+  text-align: center;
   color:white;
   font-family: 'Lobster';
 }
