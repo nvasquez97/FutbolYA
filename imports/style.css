@@ -14,19 +14,6 @@ span{
   font-size: larger;
   font-style: italic;
 }
-.informacion{
-  display:block;
-  width:100%;
-}
-.infoI{
-  float:left;
-  width:65%;
-}
-.infoD{
-  float:right;
-  width:35%;
-  margin-bottom: 15px;
-}
 .row
 {
   max-width:100%;
@@ -108,7 +95,8 @@ font-family:'Cabin';
   text-align: center;
   color: grey;
 }
-#centro{
+.centro{
+  text-align:center;
   padding-top: 20%;
 }
 .derecha{
@@ -155,11 +143,6 @@ ul li{
   float:left;
   margin: 20px 20px 20px 20px;
 }
-.derechaIn{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  float:right;
-}
 
 .infoReservas{
   color:white;
@@ -171,7 +154,6 @@ ul li{
 }
 #info{
   color:white;
-  text-align: center;
   font-family: 'Lobster';
   padding-top:50px;
   padding-bottom: 50px;
@@ -189,9 +171,11 @@ ul li{
 }
 
 .titulo{
-  text-align: center;
+  text-align: center; 
   color:white;
   font-family: 'Lobster';
+  padding-bottom: 10%;
+
 }
 .goles{
   padding-left:20px;
@@ -208,9 +192,11 @@ ul li{
 
 .derechaD{
   float:right;
+  text-align:right;
 }
 .izquierda{
   float:left;
+  text-align:left;
 }
 th,td{
   color:white;
@@ -226,8 +212,8 @@ th,td{
   color:rgba(255, 0, 47, 0.7);
   font-size:35px;
   font-weight:bold;
+  padding-left:50px;
 }
 
-#gol1 {
-  padding-left:2%;
-}
+
+
