@@ -50,16 +50,21 @@ export default class InfoPartidos extends Component {
     }
     golEquipo(num)
     {
-      num===2?(var goles = this.state.marcador2+1
+      if(num===2)
+      {
+            var goles = this.state.marcador2+1;
       this.setState(
       {
             marcador2:goles
-      }))
-      :
-      (var goles = this.state.marcador1+1
-      this.setState(
+      });
+      }
+      else
       {
+            var goles = this.state.marcador1+1;
+            this.setState(
+            {
             marcador1:goles
-      }));
+            });
+      }
     }
 }
