@@ -32,7 +32,7 @@
   				<Localidades obtenerReservas={this.obtenerReservas.bind(this)}/>
   			</div>
   			<div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)}/></div>
-        <InfoReservas />
+        <InfoReservas idR={this.state.idReserva}/>
   			</div>
   			);
   	}

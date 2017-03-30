@@ -14,6 +14,18 @@ span{
   font-size: larger;
   font-style: italic;
 }
+.informacion{
+  display:block;
+  width:100%;
+}
+.infoI{
+  float:left;
+  width:65%;
+}
+.infoD{
+  float:right;
+  width:35%;
+}
 .row
 {
   max-width:100%;
@@ -142,6 +154,10 @@ ul li{
   float:left;
   margin: 20px 20px 20px 20px;
 }
+.derecha{
+  padding-top: 50;
+  padding-bottom: 50;
+}
 
 .infoReservas{
   color:white;
@@ -153,6 +169,7 @@ ul li{
 }
 #info{
   color:white;
+  text-align: center;
   font-family: 'Lobster';
   padding-top:50px;
   padding-bottom: 50px;

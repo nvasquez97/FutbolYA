@@ -1,6 +1,8 @@
 'use strict';
 import React, { Component } from 'react';
 import {Reservas} from '../api/reservas.js'
+import {Localidades} from '../api/localidades.js'
+import {Canchas} from '../api/canchas.js'
 import InfoPartidos from './infoPartidos';
 export default class InfoReservas extends Component {
 
@@ -12,7 +14,9 @@ export default class InfoReservas extends Component {
 			reservas:[],
 			reserva:null,
 			idReserva:-1,
-			escribe:`Escribe el id de tu reserva: `
+			escribe:`Escribe el id de tu reserva: `,
+			nombreLoc:'',
+			nombreCancha:''
 		}
 	}
 
@@ -20,8 +24,18 @@ export default class InfoReservas extends Component {
 		return (
 			<div className="inforr" >
 			<div className="container">
-			<h1 id="info">Consulta tu Reserva</h1>
-			
+			<div className="informacion">
+
+				<div className="infoI">
+					<h1 id="info">Consulta tu Reserva</h1>
+				</div>
+				<div className="infoD">
+					<button onClick={this.props.volver} className="btn btn-default derecha">Regresar</button>
+				</div>
+				<hr></hr>
+			</div>
+
+			<div>
 			{
 				(this.state.reserva!==null)?
                
@@ -43,6 +57,7 @@ export default class InfoReservas extends Component {
                     		<td>Suba</td>
 		                    <td >{this.state.reserva.precio}</td>
                     		<td>345</td>
+                    		<td>4:00</td>
 	                    </tr>
                     	</tbody>
 					</table>
@@ -51,8 +66,13 @@ export default class InfoReservas extends Component {
                 <div className="amarillo">
                     <label htmlFor="idReserva">{this.state.escribe}</label>
                     <input id="idReserva" type="text" className="inputText" onChange={event=>this.idR(event.target.value)}></input>                
+                    <div>
+                    	<button onClick={this.getReserva}>Busca tu reserva</button>
+                    </div>
                     </div>
 			}
+
+			</div>
 					
 					<InfoPartidos mostrarPartidos={this.mostrarPartidos.bind(this)} />
 					</div>
@@ -67,11 +87,68 @@ export default class InfoReservas extends Component {
 		document.getElementsByClassName('infoPartidos')[0].style.display='block';
 	}
 	obtenerTodasReservas(){
-		var lista = Reservas.find({}).fetch();
+		if(this.state.idReserva>0)
+		{
+			var lista = Reservas.find({"key":this.state.idReserva}).fetch();
+			var Res=lista[0];
+			this.setState({
+				reservas:lista,
+				reserva:lista[0]
+			});		
+			this.nombreCancha(Res);
+			this.nombreLocalidad(Res);
+		}
+		else if(this.props.idR>0)
+		{
+			var lista = Reservas.find({"key":this.props.idR}).fetch();
+			var Res=lista[0];
+			
+			this.setState({
+				reservas:lista,
+				reserva:lista[0],
+				idReserva:Res.key
+			});	
+			this.nombreCancha(Res);
+			this.nombreLocalidad(Res);
+		}
+		else
+		{
+
+		}
+		
+		
+	}
+
+	nombreCancha(reserv){
+		try
+		{
+		var lac =Canchas.find({"key":reserv.id_cancha});
+        var nombreC =lac.fetch()[0];
+        this.setState({
+        	nombreCancha:nombreC.nombreSitio
+        });	
+		}
+		catch(e){
+			console.log('Undefined');
+		}
+	}
+
+	nombreLocalidad(reserv)
+	{
+		try{
+			var lac =Canchas.find({"key":reserv.id_cancha}).fetch();
+		var loc=Localidades.find({"key":lac[0].id_localidad}).fetch();
+		var nombre=loc[0];
 		this.setState({
-			reservas:lista,
-			reserva:lista[0]
+			nombreLoc:nombre.ubicacion
 		});
+		}
+		catch(e)
+		{
+			console.log('Undefined')
+		}
+		
+		
 	}
 
 	idR(idRes){
@@ -81,4 +158,4 @@ export default class InfoReservas extends Component {
 		});
 	}
 
-			}
+}
