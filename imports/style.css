@@ -25,6 +25,7 @@ span{
 .infoD{
   float:right;
   width:35%;
+  margin-bottom: 15px;
 }
 .row
 {
@@ -154,9 +155,10 @@ ul li{
   float:left;
   margin: 20px 20px 20px 20px;
 }
-.derecha{
-  padding-top: 50;
-  padding-bottom: 50;
+.derechaIn{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float:right;
 }
 
 .infoReservas{

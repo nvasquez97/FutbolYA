@@ -30,9 +30,8 @@ export default class InfoReservas extends Component {
 					<h1 id="info">Consulta tu Reserva</h1>
 				</div>
 				<div className="infoD">
-					<button onClick={this.props.volver} className="btn btn-default derecha">Regresar</button>
+					<button onClick={this.props.volver} className="btn btn-default derechaIn">Regresar</button>
 				</div>
-				<hr></hr>
 			</div>
 
 			<div>
