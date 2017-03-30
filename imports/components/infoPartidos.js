@@ -23,7 +23,8 @@ export default class InfoPartidos extends Component {
             <div className="izquierda">
             <label className="equipo amarillo">Equipo #1</label>
             <label className="goles amarillo" >{this.state.marcador1}</label>
-            <a href="#" className="ve">
+            <br/>
+            <a href="#Gol" className="ve" onClick={()=>this.golEquipo(1)} title="Gol Equipo 1">
                   <i className="fa fa-futbol-o fa-3x"></i></a>
             </div>
             </div>
@@ -39,7 +40,7 @@ export default class InfoPartidos extends Component {
             <label className="equipo amarillo">Equipo #2</label>
             <label className="goles amarillo">{this.state.marcador2}</label>
             <br/>
-            <a href="#" className="ve" onClick={()=>this.golEquipo(2)}>
+            <a href="#Gol" className="ve" onClick={()=>this.golEquipo(2)} title="Gol Equipo 2">
                   <i className="fa fa-futbol-o fa-3x"></i></a>
             </div>
             </div>

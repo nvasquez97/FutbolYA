@@ -199,7 +199,7 @@ ul li{
   text-align: center; 
   color:white;
   font-family: 'Lobster';
-  padding-bottom: 10%;
+  padding-bottom: 1%;
 
 }
 .goles{
@@ -217,11 +217,11 @@ ul li{
 
 .derechaD{
   float:right;
-  text-align:right;
+  text-align:center;
 }
 .izquierda{
   float:left;
-  text-align:left;
+  text-align:center;
 }
 th,td{
   color:white;
