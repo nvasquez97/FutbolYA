@@ -144,7 +144,7 @@ font-family:'Cabin';
 
 .btn-group{
   padding-top:5%;
-  padding-left: 30%;
+  padding-left: 37%;
 }
 
 .loc{
@@ -238,6 +238,11 @@ th,td{
   font-size:35px;
   font-weight:bold;
   padding-left:50px;
+}
+
+.square-box{
+width: 50%;
+    overflow: hidden;
 }
 
 

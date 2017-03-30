@@ -21,8 +21,8 @@ export default class InfoPartidos extends Component {
             <div className='row'>
             <div className='col-md-4'>
             <div className="izquierda">
-            <label className="equipo amarillo">Equipo #1</label>
-            <label className="goles amarillo" >{this.state.marcador1}</label>
+            <label className="equipo amarillo">Equipo No.1 :</label>
+            <label className="goles amarillo">{this.state.marcador1}</label>
             <br/>
             <a href="#Gol" className="ve" onClick={()=>this.golEquipo(1)} title="Gol Equipo 1">
                   <i className="fa fa-futbol-o fa-3x"></i></a>
@@ -37,7 +37,7 @@ export default class InfoPartidos extends Component {
             </div>
             <div className='col-md-4'>
             <div className="derechaD">
-            <label className="equipo amarillo">Equipo #2</label>
+            <label className="equipo amarillo">Equipo No.2 :</label>
             <label className="goles amarillo">{this.state.marcador2}</label>
             <br/>
             <a href="#Gol" className="ve" onClick={()=>this.golEquipo(2)} title="Gol Equipo 2">

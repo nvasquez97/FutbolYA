@@ -67,7 +67,7 @@ export default class InfoReservas extends Component {
                     <label htmlFor="idReserva">{this.state.escribe}</label>
                     <input id="idReserva" type="text" className="inputText" onChange={event=>this.idR(event.target.value)}></input>                
                     <div>
-                    	<button onClick={this.getReserva} className="negro">Busca tu reserva</button>
+                    	<button onClick={this.obtenerTodasReservas.bind(this)} className="negro">Busca tu reserva</button>
                     </div>
                     </div>
 			}
