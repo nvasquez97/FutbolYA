@@ -2,6 +2,15 @@
 import React, { Component } from 'react';
 export default class InfoPartidos extends Component {
     
+    constructor(props)
+      {
+            super(props);
+            this.state={
+                  marcador1:0,
+                  marcador2:0
+            }
+      }
+
     render() {
         return (
             <div className="infoPartidos" >
@@ -12,28 +21,45 @@ export default class InfoPartidos extends Component {
             <div className='row'>
             <div className='col-md-4'>
             <div className="izquierda">
-            <label className="equipo">Equipo #1</label>
-            <label className="goles" >3</label>
-            <i className="fa fa-futbol-o fa-3x"></i>
+            <label className="equipo amarillo">Equipo #1</label>
+            <label className="goles amarillo" >{this.state.marcador1}</label>
+            <a href="#" className="ve">
+                  <i className="fa fa-futbol-o fa-3x"></i></a>
             </div>
             </div>
             <div className='col-md-4'>
             <div className="centro">
-            <h3>
+            <h3 className="amarillo">
             VS.
             </h3>
             </div>
             </div>
             <div className='col-md-4'>
             <div className="derechaD">
-            <label className="equipo">Equipo #2</label>
-            <label className="goles">2</label>
-            <i className="fa fa-futbol-o fa-3x"></i>
+            <label className="equipo amarillo">Equipo #2</label>
+            <label className="goles amarillo">{this.state.marcador2}</label>
+            <br/>
+            <a href="#" className="ve" onClick={()=>this.golEquipo(2)}>
+                  <i className="fa fa-futbol-o fa-3x"></i></a>
             </div>
             </div>
             </div>
             </div>
             </div>
             );
+    }
+    golEquipo(num)
+    {
+      num===2?(var goles = this.state.marcador2+1
+      this.setState(
+      {
+            marcador2:goles
+      }))
+      :
+      (var goles = this.state.marcador1+1
+      this.setState(
+      {
+            marcador1:goles
+      }));
     }
 }

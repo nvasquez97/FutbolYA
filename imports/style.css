@@ -14,6 +14,24 @@ span{
   font-size: larger;
   font-style: italic;
 }
+.derechaIn{
+   margin-top: 50px;
+   margin-bottom: 50px;
+   float:right;
+ }
+.informacion{
+   display:block;
+   width:100%;
+ }
+ .infoI{
+   float:left;
+   width:65%;
+ }
+ .infoD{
+   float:right;
+   width:35%;
+   margin-bottom: 15px;
+ }
 .row
 {
   max-width:100%;
@@ -109,6 +127,9 @@ font-family:'Cabin';
 .localidad{
   background-color: rgb(16,54,69);
 }
+.negro{
+  color:black;
+}
 .puntaje{
   background-color: rgba(250,250,250,0.3);
   margin-bottom: 10px;
@@ -129,6 +150,10 @@ font-family:'Cabin';
 .loc{
   padding-top:5%;
   color:white;
+}
+.escribe
+{
+  text-align: center;
 }
 
 .escoge{

@@ -25,12 +25,11 @@ export default class InfoReservas extends Component {
 			<div className="inforr" >
 			<div className="container">
 			<div className="informacion">
-
 				<div className="infoI">
 					<h1 id="info">Consulta tu Reserva</h1>
 				</div>
 				<div className="infoD">
-					<button onClick={this.props.volver} className="btn btn-default derechaIn">Regresar</button>
+					<button onClick={this.volver.bind(this)} className="btn btn-default derechaIn">Regresar</button>
 				</div>
 			</div>
 
@@ -39,6 +38,7 @@ export default class InfoReservas extends Component {
 				(this.state.reserva!==null)?
                
                    (
+                   <div>
                    <div className="table-responsive">
 						<table className="table table-bordered">
 						<thead>
@@ -60,13 +60,14 @@ export default class InfoReservas extends Component {
 	                    </tr>
                     	</tbody>
 					</table>
+					</div>
 					</div>)
                 :
-                <div className="amarillo">
+                <div className="amarillo escribe">
                     <label htmlFor="idReserva">{this.state.escribe}</label>
                     <input id="idReserva" type="text" className="inputText" onChange={event=>this.idR(event.target.value)}></input>                
                     <div>
-                    	<button onClick={this.getReserva}>Busca tu reserva</button>
+                    	<button onClick={this.getReserva} className="negro">Busca tu reserva</button>
                     </div>
                     </div>
 			}
@@ -155,6 +156,20 @@ export default class InfoReservas extends Component {
 		{
 			idReserva:idRes
 		});
+	}
+	volver(){
+		this.setState(
+		{
+			reservas:[],
+			reserva:null,
+			idReserva:-1,
+			escribe:`Escribe el id de tu reserva: `,
+			nombreLoc:'',
+			nombreCancha:''
+		});
+		document.getElementsByClassName('inforr')[0].style.display='none';
+      	document.getElementsByClassName('localidad')[0].style.display='block';
+      	
 	}
 
 }
