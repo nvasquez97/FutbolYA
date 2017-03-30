@@ -61,20 +61,19 @@ export default class InfoReservas extends Component {
                     	</tbody>
 					</table>
 					</div>
+					<InfoPartidos mostrarPartidos={this.mostrarPartidos.bind(this)} />
 					</div>)
                 :
                 <div className="amarillo escribe">
                     <label htmlFor="idReserva">{this.state.escribe}</label>
                     <input id="idReserva" type="text" className="inputText" onChange={event=>this.idR(event.target.value)}></input>                
                     <div>
-                    	<button onClick={this.obtenerTodasReservas.bind(this)} className="negro">Busca tu reserva</button>
+                    	<button onClick={this.obtenerTodasReservas.bind(this)} className="btn btn-danger">Busca tu reserva</button>
                     </div>
                     </div>
 			}
 
 			</div>
-					
-					<InfoPartidos mostrarPartidos={this.mostrarPartidos.bind(this)} />
 					</div>
 					</div>
 					);
@@ -87,9 +86,13 @@ export default class InfoReservas extends Component {
 		document.getElementsByClassName('infoPartidos')[0].style.display='block';
 	}
 	obtenerTodasReservas(){
+		console.log('obtiene');
+		console.log(this.state.idReserva);
+		console.log(typeof(parseInt(this.state.idReserva)));
 		if(this.state.idReserva>0)
 		{
-			var lista = Reservas.find({"key":this.state.idReserva}).fetch();
+			var lista = Reservas.find({"key":parseInt(this.state.idReserva)}).fetch();
+			console.log(lista);
 			var Res=lista[0];
 			this.setState({
 				reservas:lista,
