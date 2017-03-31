@@ -4,6 +4,7 @@ import {Reservas} from '../api/reservas.js'
 import {LocalidadM} from '../api/localidades.js'
 import {Canchas} from '../api/canchas.js'
 import InfoPartidos from './infoPartidos';
+import {Partidos} from '../api/partidos.js'
 export default class InfoReservas extends Component {
 
 	constructor(props)
@@ -16,7 +17,8 @@ export default class InfoReservas extends Component {
 			idReserva:-1,
 			escribe:`Escribe el id de tu reserva: `,
 			nombreLoc:'',
-			nombreCancha:''
+			nombreCancha:'',
+			partido:null
 		}
 	}
 
@@ -32,12 +34,11 @@ export default class InfoReservas extends Component {
 					<button onClick={this.volver.bind(this)} className="btn btn-default derechaIn">Regresar</button>
 				</div>
 			</div>
-
 			<div>
 			{
 				(this.state.reserva!==null||this.props.idR>0)?
                    (
-                   <div>
+                   <div>                   
                    <div className="table-responsive">
 						<table className="table table-bordered">
 						<thead>
@@ -60,7 +61,7 @@ export default class InfoReservas extends Component {
                     	</tbody>
 					</table>
 					</div>
-					<InfoPartidos mostrarPartidos={this.mostrarPartidos.bind(this)} />
+					<InfoPartidos partido={this.state.partido} idreserva={this.state.idReserva}/>
 					</div>)
                 :
                 <div className="amarillo escribe">
@@ -88,7 +89,6 @@ export default class InfoReservas extends Component {
 		if(this.state.idReserva>0)
 		{
 			var lista = Reservas.find({"key":parseInt(this.state.idReserva)}).fetch();
-			console.log(lista);
 			var Res=lista[0];
 			this.setState({
 				reservas:lista,
@@ -96,10 +96,16 @@ export default class InfoReservas extends Component {
 			});		
 			this.nombreCancha(Res);
 			this.nombreLocalidad(Res);
+			console.log(parseInt(this.state.idReserva));
+			var part = Partidos.find({"id_reserva":parseInt(this.state.idReserva)}).fetch();
+			var partid=part[0];
+			this.setState({
+			partido:partid}
+			);
+			
 		}
 		else if(this.props.idR>0)
 		{
-			console.log('por aca');
 			var lista = Reservas.find({"key":this.props.idR}).fetch();
 			var Res=lista[0];
 			
@@ -110,6 +116,12 @@ export default class InfoReservas extends Component {
 			});	
 			this.nombreCancha(Res);
 			this.nombreLocalidad(Res);
+			var part = Partidos.find({"id_reserva":this.props.idR}).fetch();
+			var partid=part[0];
+			this.setState({
+				partido:partid
+			});
+			console.log(partid);
 		}
 		else
 		{

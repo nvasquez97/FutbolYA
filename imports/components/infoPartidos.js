@@ -1,13 +1,15 @@
 'use strict';
 import React, { Component } from 'react';
+import {Partidos} from '../api/partidos.js'
 export default class InfoPartidos extends Component {
     
     constructor(props)
       {
             super(props);
+            console.log(this.props);
             this.state={
-                  marcador1:0,
-                  marcador2:0
+                  marcador1:this.props.partido.marcador1,
+                  marcador2:this.props.partido.marcador2
             }
       }
 
@@ -58,6 +60,14 @@ export default class InfoPartidos extends Component {
       {
             marcador2:goles
       });
+      Partidos.update({"_id":this.props.partido._id},
+            {
+                  "key": this.props.partido.key,
+                  "marcador1": this.state.marcador1,
+                  "marcador2": goles,
+                  "id_reserva": parseInt(this.props.idreserva)
+            });
+
       }
       else
       {
@@ -65,6 +75,13 @@ export default class InfoPartidos extends Component {
             this.setState(
             {
             marcador1:goles
+            });
+            Partidos.update({"_id":this.props.partido._id},
+            {
+                  "key": this.props.partido.key,
+                  "marcador1": goles,
+                  "marcador2": this.state.marcador2,
+                  "id_reserva": parseInt(this.props.idreserva)
             });
       }
     }
