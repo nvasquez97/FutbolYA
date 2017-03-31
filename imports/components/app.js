@@ -55,7 +55,6 @@
 
     infoReserva(num, idC)
     {
-      console.log("Pasa"); 
       var reser=Reservas.find({'key':num}).fetch()[0];
       this.setState({
         idReserva:num,

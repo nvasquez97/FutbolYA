@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import {Reservas} from '../api/reservas.js'
-import {Localidades} from '../api/localidades.js'
+import {LocalidadM} from '../api/localidades.js'
 import {Canchas} from '../api/canchas.js'
 import InfoPartidos from './infoPartidos';
 export default class InfoReservas extends Component {
@@ -35,8 +35,7 @@ export default class InfoReservas extends Component {
 
 			<div>
 			{
-				(this.state.reserva!==null)?
-               
+				(this.state.reserva!==null||this.props.idR>0)?
                    (
                    <div>
                    <div className="table-responsive">
@@ -53,9 +52,9 @@ export default class InfoReservas extends Component {
 						<tbody>
 						<tr key={this.state.reserva._id}>
                     		<td >{this.state.reserva._id}</td>
-                    		<td>Suba</td>
-		                    <td >{this.state.reserva.precio}</td>
-                    		<td>345</td>
+                    		<td>{this.state.nombreLoc}</td>
+		                    <td >{this.state.nombreCancha}</td>
+                    		<td>$ {this.state.reserva.precio}</td>
                     		<td>4:00</td>
 	                    </tr>
                     	</tbody>
@@ -86,9 +85,6 @@ export default class InfoReservas extends Component {
 		document.getElementsByClassName('infoPartidos')[0].style.display='block';
 	}
 	obtenerTodasReservas(){
-		console.log('obtiene');
-		console.log(this.state.idReserva);
-		console.log(typeof(parseInt(this.state.idReserva)));
 		if(this.state.idReserva>0)
 		{
 			var lista = Reservas.find({"key":parseInt(this.state.idReserva)}).fetch();
@@ -103,6 +99,7 @@ export default class InfoReservas extends Component {
 		}
 		else if(this.props.idR>0)
 		{
+			console.log('por aca');
 			var lista = Reservas.find({"key":this.props.idR}).fetch();
 			var Res=lista[0];
 			
@@ -140,7 +137,7 @@ export default class InfoReservas extends Component {
 	{
 		try{
 			var lac =Canchas.find({"key":reserv.id_cancha}).fetch();
-		var loc=Localidades.find({"key":lac[0].id_localidad}).fetch();
+		var loc=LocalidadM.find({"key":lac[0].id_localidad}).fetch();
 		var nombre=loc[0];
 		this.setState({
 			nombreLoc:nombre.ubicacion
