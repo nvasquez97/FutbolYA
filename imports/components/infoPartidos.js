@@ -60,14 +60,8 @@ export default class InfoPartidos extends Component {
       {
             marcador2:goles
       });
-      Partidos.update({"_id":this.props.partido._id},
-            {
-                  "key": this.props.partido.key,
-                  "marcador1": this.state.marcador1,
-                  "marcador2": goles,
-                  "id_reserva": parseInt(this.props.idreserva)
-            });
-
+      //update partidos
+      Meteor.call('partidos.update', this.props.partido._id, this.props.partido.key, this.state.marcador1, goles,parseInt(this.props.idreserva));
       }
       else
       {
@@ -76,13 +70,8 @@ export default class InfoPartidos extends Component {
             {
             marcador1:goles
             });
-            Partidos.update({"_id":this.props.partido._id},
-            {
-                  "key": this.props.partido.key,
-                  "marcador1": goles,
-                  "marcador2": this.state.marcador2,
-                  "id_reserva": parseInt(this.props.idreserva)
-            });
+            //update partidos
+            Meteor.call('partidos.update', this.props.partido._id, this.props.partido.key, goles, this.state.marcador2, parseInt(this.props.idreserva));
       }
     }
 }

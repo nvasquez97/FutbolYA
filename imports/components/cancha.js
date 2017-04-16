@@ -76,35 +76,15 @@ export default class Cancha extends Component{
     var keyP=this.randomBetween(100,10000);
     var idP=keyP+'';
     //Post Reserva a nombre de..
-    Usuarios.insert(
-    {
-      "_id": idU,
-      "key": keyU,
-      "nombre":nombreUsuario
-    });
+    Meteor.call('usuarios.insert', idU, keyU, nombreUsuario);
       
       
     //Post Nueva Reserva
-    Reservas.insert(
-      {
-      "_id": idR,
-      "key": key,
-      "precio": precio,
-      "cupos": cupos,
-      "id_usuario": keyU,
-      "id_cancha": idC
-    }
-    );
+    Meteor.call('reservas.insert', idR, key, precio, cupos, keyU, idC);
+    
     //Post Nuevo Partido
-    Partidos.insert(
-      {
-      "_id": idP,
-      "key": keyP,
-      "marcador1": 0,
-      "marcador2": 0,
-      "id_reserva": key
-    }
-    );
+    Meteor.call('partidos.insert', idP, keyP, key);
+    
     this.props.infoReserva(key,idC);
   }
 
