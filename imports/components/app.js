@@ -6,71 +6,59 @@
   import InfoReservas from './infoReservas';
   import Cancha from './cancha';
   import InfoPartidos from './infoPartidos';
-  import {Reservas} from '../api/reservas.js'
+  import { Reservas } from '../api/reservas.js';
 
   export default class App extends Component {
 
-  	constructor(props)
-  	{
-  		super(props);
-      this.state=
-      {
-        reserva:'',
+    constructor(props) {
+      super(props);
+      this.state = {
+        reserva: '',
         localidadId: -1,
-        idReserva:-1
-      }
-  	}
-
-  	render()
-  	{
-  		return(
-  			<div>
-  			<div className="futbolYa">
-  				<FutbolYa irACuadro={this.irACuadro.bind(this)}/>
-  			</div>
-  			<div className="localidad">
-  				<Localidades obtenerReservas={this.obtenerReservas.bind(this)}/>
-  			</div>
-  			<div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)}/></div>
-        <InfoReservas idR={this.state.idReserva}/>
-  			</div>
-  			);
-  	}
-
-    irAReserva()
-    {
-      document.getElementsByClassName('oculto')[0].style.display='none';
-      document.getElementsByClassName('localidad')[0].style.display='none';
-     
-    }
-    irACuadro(){
-       document.getElementsByClassName('inforr')[0].style.display='block';
-       document.getElementsByClassName('localidad')[0].style.display='none';
+        idReserva: -1,
+      };
     }
 
-    getId()
-    {
+    getId() {
       return this.state.idReserva;
     }
-
-    infoReserva(num, idC)
-    {
-      var reser=Reservas.find({'key':num}).fetch()[0];
+    irAReserva() {
+      document.getElementsByClassName('oculto')[0].style.display = 'none';
+      document.getElementsByClassName('localidad')[0].style.display = 'none';
+    }
+    irACuadro() {
+      document.getElementsByClassName('inforr')[0].style.display = 'block';
+      document.getElementsByClassName('localidad')[0].style.display = 'none';
+    }
+    infoReserva(num, idC) {
+      const reser = Reservas.find({ key: num }).fetch()[0];
       this.setState({
-        idReserva:num,
-        reserv:reser
+        idReserva: num,
+        reserv: reser,
       });
-      document.getElementsByClassName('inforr')[0].style.display='block';
-      document.getElementsByClassName('oculto')[0].style.display='none';
-      document.getElementsByClassName('localidad')[0].style.display='none';
+      document.getElementsByClassName('inforr')[0].style.display = 'block';
+      document.getElementsByClassName('oculto')[0].style.display = 'none';
+      document.getElementsByClassName('localidad')[0].style.display = 'none';
     }
 
-    obtenerReservas(tipo, num)
-    {
-      this.setState(
-      {
-        reserva:tipo,
-        localidadId:num
+    obtenerReservas(tipo, num) {
+      this.setState = ({
+        reserva: tipo,
+        localidadId: num,
       });
+    }
+    render() {
+      return (
+        <div>
+          <div className="futbolYa">
+            <FutbolYa irACuadro={this.irACuadro.bind(this)} />
+          </div>
+          <div className="localidad">
+            <Localidades obtenerReservas={this.obtenerReservas.bind(this)} />
+          </div>
+          <div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)} /></div>
+          <InfoReservas idR={this.state.idReserva} />
+        </div>
+      );
     }
   }
