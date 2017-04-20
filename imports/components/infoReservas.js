@@ -27,7 +27,7 @@ export default class InfoReservas extends Component {
     if (this.state.idReserva > 0) {
       const lista = Reservas.find({ key: parseInt(this.state.idReserva) }).fetch();
       const Res = lista[0];
-      this.setState = ({
+      this.setState({
         reservas: lista,
         reserva: lista[0],
       });

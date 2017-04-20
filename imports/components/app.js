@@ -42,10 +42,11 @@
     }
 
     obtenerReservas(tipo, num) {
-      this.setState = ({
+      this.setState({
         reserva: tipo,
         localidadId: num,
       });
+
     }
 
     render() {

@@ -15,7 +15,7 @@ export default class Cancha extends Component {
     };
   }
   usuario(val) {
-    this.setState = ({
+    this.setState({
       nombreU: val,
     });
   }
