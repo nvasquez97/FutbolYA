@@ -7,20 +7,21 @@ import { LocalidadM } from '../api/localidades.js'
 import { shallow } from 'enzyme';
 
 describe('Localidades', () => {
-  it('Obtiene localidades', () => {
+  it('Este test no hace nada, podrias hacer un assert de Localidad, no se de que exactamente', () => {
     chai.assert(true);
   });
 });
 
-if(Meteor.isClient)
-{
+if(Meteor.isClient){
 	Factory.define("local", LocalidadM, {});
 	describe('Localidades', () => {
   		it('Renderiza localidades', () => {
   			const localidad = Factory.build('local',{"_id": 1, "key": 1, "ubicacion": "San Cristobal"});
   			const result = shallow(<Localidad localidad={localidad} /> );
-    	chai.assert(true);
+  			chai.assert.equal(result.node.props.children, 'San Cristobal');
   		});
 	});
 }
+	
+
 
