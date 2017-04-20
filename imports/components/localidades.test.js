@@ -11,6 +11,7 @@ describe('Localidades', () => {
     chai.assert(true);
   });
 });
+<<<<<<< HEAD
 
 
 if(Meteor.isClient)
@@ -25,3 +26,5 @@ if(Meteor.isClient)
 	});
 
 }
+=======
+>>>>>>> af71216a62af2d74a7377071aff1799d9e0c988c
