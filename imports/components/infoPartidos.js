@@ -1,6 +1,5 @@
 'use strict';
 import React, { Component } from 'react';
-import { Partidos } from '../api/partidos.js';
 
 export default class InfoPartidos extends Component {
   constructor(props) {

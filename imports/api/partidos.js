@@ -2,6 +2,12 @@ import { Mongo } from 'meteor/mongo';
 
 
 export const Partidos = new Mongo.Collection('partidos');
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('partidos', function partidosPublication() {
+    return Partidos.find({});
+  });
+}
 
 Meteor.methods({
   'partidos.insert'(idP, keyP, key) {

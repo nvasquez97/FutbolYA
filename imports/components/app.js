@@ -47,7 +47,9 @@
         localidadId: num,
       });
     }
+
     render() {
+      Meteor.subscribe('reservas');
       return (
         <div>
           <div className="futbolYa">

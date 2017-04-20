@@ -106,6 +106,10 @@ export default class InfoReservas extends Component {
   }
 
   render() {
+    Meteor.subscribe('reservas');
+    Meteor.subscribe('localidades');
+    Meteor.subscribe('canchas');
+    Meteor.subscribe('partidos');
     return (
       <div className="inforr" >
         <div className="container">

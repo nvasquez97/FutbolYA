@@ -1,8 +1,5 @@
 'use strict';
 import React, { Component } from 'react';
-import { Usuarios } from '../api/usuarios.js';
-import { Reservas } from '../api/reservas.js';
-import { Partidos } from '../api/partidos.js';
 
 export default class Cancha extends Component {
 

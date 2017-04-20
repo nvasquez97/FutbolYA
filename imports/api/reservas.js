@@ -2,6 +2,13 @@ import { Mongo } from 'meteor/mongo';
 
 export const Reservas = new Mongo.Collection('reservas');
 
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('reservas', function reservasPublication() {
+    return Reservas.find({});
+  });
+}
+
 Meteor.methods({
   'reservas.insert'(idR, key, precio, cupos, keyU, idC) {
     Reservas.insert(
