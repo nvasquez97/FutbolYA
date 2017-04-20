@@ -1,7 +1,6 @@
 
   'use strict';
   import React, { Component } from 'react';
-
   import Reserva from './reserva';
   import Cancha from './cancha';
   import { Reservas } from '../api/reservas.js';
@@ -91,6 +90,9 @@
       }
     }
     render() {
+      Meteor.subscribe('reservas');
+      Meteor.subscribe('canchas');
+      console.log(this.props.reserva);
       return (
         <div className="container oculto" id="b1">
           <h1 className="rojo">

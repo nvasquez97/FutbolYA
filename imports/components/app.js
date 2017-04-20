@@ -42,12 +42,15 @@
     }
 
     obtenerReservas(tipo, num) {
-      this.setState = ({
+      this.setState({
         reserva: tipo,
         localidadId: num,
       });
+
     }
+
     render() {
+      Meteor.subscribe('reservas');
       return (
         <div>
           <div className="futbolYa">

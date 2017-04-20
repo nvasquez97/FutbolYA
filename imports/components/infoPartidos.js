@@ -1,6 +1,5 @@
 'use strict';
 import React, { Component } from 'react';
-import { Partidos } from '../api/partidos.js';
 
 export default class InfoPartidos extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export default class InfoPartidos extends Component {
   golEquipo(num) {
     if (num === 2) {
       const goles = this.state.marcador2 + 1;
-      this.setState = ({
+      this.setState({
         marcador2: goles,
       });
       // update partidos
@@ -23,7 +22,7 @@ export default class InfoPartidos extends Component {
      }
     else {
       const goles = this.state.marcador1 + 1;
-      this.setState = ({
+      this.setState({
         marcador1: goles,
       });
             // update partidos

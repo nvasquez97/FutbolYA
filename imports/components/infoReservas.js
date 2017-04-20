@@ -27,7 +27,7 @@ export default class InfoReservas extends Component {
     if (this.state.idReserva > 0) {
       const lista = Reservas.find({ key: parseInt(this.state.idReserva) }).fetch();
       const Res = lista[0];
-      this.setState = ({
+      this.setState({
         reservas: lista,
         reserva: lista[0],
       });
@@ -106,6 +106,10 @@ export default class InfoReservas extends Component {
   }
 
   render() {
+    Meteor.subscribe('reservas');
+    Meteor.subscribe('localidades');
+    Meteor.subscribe('canchas');
+    Meteor.subscribe('partidos');
     return (
       <div className="inforr" >
         <div className="container">

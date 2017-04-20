@@ -1,6 +1,5 @@
   'use strict';
   import React, { Component } from 'react';
-  import { Reservas } from '../api/reservas.js';
 
   export default class Reserva extends Component {
     constructor(props) {

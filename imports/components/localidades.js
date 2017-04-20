@@ -16,7 +16,9 @@ export default class Localidades extends Component {
     }
   }
 
+
   render() {
+    Meteor.subscribe('localidades');
     return (      
       <div className="container">
       <h2 className="primero">¿Qué deseas hacer?</h2>
@@ -59,13 +61,14 @@ export default class Localidades extends Component {
           selected:false
         });
       }
-      this.obtenerLocalidades();
+      
       this.setState({
         tipo: tip,
         escoge:'Escoge tu localidad: ',
         localidadH:'Localidades'});
+        this.obtenerLocalidades();
     }
-
+    
     reservasL(num, nombreL)
     {
       this.props.obtenerReservas(this.state.tipo, num);
@@ -79,6 +82,7 @@ export default class Localidades extends Component {
     }
 
     obtenerLocalidades() {
+
       var locals=LocalidadM.find({});      
       this.setState(
       {
