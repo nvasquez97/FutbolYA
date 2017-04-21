@@ -1,6 +1,7 @@
 
   'use strict';
   import React, { Component } from 'react';
+  import { Meteor } from 'meteor/meteor';
   import Reserva from './reserva';
   import Cancha from './cancha';
   import { Reservas } from '../api/reservas.js';

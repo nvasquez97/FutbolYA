@@ -1,4 +1,5 @@
 import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
 export const Usuarios = new Mongo.Collection('usuarios');
 

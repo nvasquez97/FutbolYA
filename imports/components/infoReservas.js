@@ -1,4 +1,5 @@
 'use strict';
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import { Reservas } from '../api/reservas.js';
 import { LocalidadM } from '../api/localidades.js';

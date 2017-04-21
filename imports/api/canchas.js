@@ -1,5 +1,5 @@
 import { Mongo } from 'meteor/mongo';
-
+import { Meteor } from 'meteor/meteor';
 
 export const Canchas = new Mongo.Collection('canchas');
 
