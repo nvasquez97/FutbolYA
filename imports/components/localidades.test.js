@@ -7,13 +7,6 @@ import React from 'react';
 import Localidad from './localidad.js';
 import { LocalidadM } from '../api/localidades.js';
 
-
-describe('Localidades', () => {
-  it('Este test no hace nada, podrias hacer un assert de Localidad, no se de que exactamente', () => {
-    chai.assert(true);
-  });
-});
-
 if (Meteor.isClient) {
   Factory.define('local', LocalidadM, {});
   describe('Localidades', () => {
