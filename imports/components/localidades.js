@@ -46,17 +46,19 @@ export default class Localidades extends Component {
         selected: true,
       });
     }
+    document.getElementById("fin").scrollIntoView();
   }
   obtenerLocalidades() {
     const locals = LocalidadM.find({});
     this.setState({
       localidades: locals.fetch(),
     });
+    document.getElementById("fin").scrollIntoView();
   }
   render() {
     Meteor.subscribe('localidades');
     return (
-      <div className="container">
+      <div className="container" id="laloc">
         <h2 className="primero">¿Qué deseas hacer?</h2>
         <div className="btn-group" data-toggle="buttons-radio">
           <button className="btn btn-default active" onClick={() => { this.tipo(1); }} href="#l1">Buscar Equipo</button>

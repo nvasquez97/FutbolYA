@@ -67,6 +67,7 @@
             descripcion: 'No hay reservas para ',
           });
         }
+        document.getElementById("fin").scrollIntoView();
        }
       else {
         const recluta = Canchas.find({ id_localidad: idloc, tipo: num });
@@ -88,12 +89,13 @@
             descripcion: 'No hay canchas de ',
           });
         }
+        document.getElementById("fin").scrollIntoView();
       }
+      document.getElementById("fin").scrollIntoView();
     }
     render() {
       Meteor.subscribe('reservas');
-      Meteor.subscribe('canchas');
-      console.log(this.props.reserva);
+      Meteor.subscribe('canchas');      
       return (
         <div className="container oculto" id="b1">
           <h1 className="rojo">

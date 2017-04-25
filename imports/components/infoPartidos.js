@@ -28,6 +28,7 @@ export default class InfoPartidos extends Component {
             // update partidos
             Meteor.call('partidos.update', this.props.partido._id, this.props.partido.key, goles, this.state.marcador2, parseInt(this.props.idreserva));
     }
+    document.getElementById("fin").scrollIntoView();
   }
   render() {
     return (
@@ -58,7 +59,7 @@ export default class InfoPartidos extends Component {
                 <label className="equipo amarillo">Equipo No.2 :</label>
                 <label className="goles amarillo">{this.state.marcador2}</label>
                 <br />
-                <a href="#Gol" className="ve" onClick={() => this.golEquipo(2)} title="Gol Equipo 2">
+                <a className="ve" onClick={() => this.golEquipo(2)} title="Gol Equipo 2">
                   <i className="fa fa-futbol-o fa-3x" /></a>
               </div>
             </div>

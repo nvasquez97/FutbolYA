@@ -33,8 +33,7 @@ export default class InfoReservas extends Component {
         reserva: lista[0],
       });
       this.nombreCancha(Res);
-      this.nombreLocalidad(Res);
-      console.log(parseInt (this.state.idReserva));
+      this.nombreLocalidad(Res);      
       const part = Partidos.find({ id_reserva: parseInt (this.state.idReserva) }).fetch();
       const partid = part[0];
       this.setState({
@@ -57,8 +56,8 @@ export default class InfoReservas extends Component {
       this.setState({
         partido: partid,
       });
-      console.log(partid);
     }
+    document.getElementById("tabla").scrollIntoView();
   }
 
   nombreCancha(reserv) {
@@ -68,6 +67,7 @@ export default class InfoReservas extends Component {
       this.setState({
         nombreCancha: nombreC.nombreSitio,
       });
+      document.getElementById("tabla").scrollIntoView();
     }
     catch (e) {
       console.log('Undefined');
@@ -82,6 +82,7 @@ export default class InfoReservas extends Component {
       this.setState({
         nombreLoc: nombre.ubicacion,
       });
+      document.getElementById("tabla").scrollIntoView();
     }
     catch (e) {
       console.log('Undefined');
@@ -125,7 +126,7 @@ export default class InfoReservas extends Component {
           <div> {
          (this.state.reserva !== null || this.props.idR > 0) ?
                    (
-                     <div>
+                     <div id="tabla">
                        <div className="table-responsive">
                          <table className="table table-bordered">
                            <thead>
@@ -151,7 +152,7 @@ export default class InfoReservas extends Component {
                        <InfoPartidos partido={this.state.partido} idreserva={this.state.idReserva} />
                      </div>)
                 :
-                     <div className="amarillo escribe">
+                     <div className="amarillo escribe" id="yt">
                        <label htmlFor="idReserva">{this.state.escribe}</label>
                        <input id="idReserva" type="text" className="inputText" onChange={event => this.idR(event.target.value)} />
                        <div>
