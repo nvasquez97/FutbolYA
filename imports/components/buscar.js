@@ -57,6 +57,7 @@
             descripcion: 'Mira reservas para ',
             localidad: '',
           });
+          document.getElementById("fin").scrollIntoView();
         }
         else {
           this.setState({
@@ -66,8 +67,8 @@
             localidad: ' en tu localidad',
             descripcion: 'No hay reservas para ',
           });
+          document.getElementById("fin").scrollIntoView();
         }
-        document.getElementById("fin").scrollIntoView();
        }
       else {
         const recluta = Canchas.find({ id_localidad: idloc, tipo: num });
@@ -79,6 +80,7 @@
             localidad: '',
             descripcion: 'Intenta reclutar en: ',
           });
+          document.getElementById("fin").scrollIntoView();
         }
         else {
           this.setState({
@@ -88,10 +90,9 @@
             localidad: ' en tu localidad',
             descripcion: 'No hay canchas de ',
           });
+          document.getElementById("fin").scrollIntoView();
         }
-        document.getElementById("fin").scrollIntoView();
       }
-      document.getElementById("fin").scrollIntoView();
     }
     render() {
       Meteor.subscribe('reservas');
