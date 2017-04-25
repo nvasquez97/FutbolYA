@@ -12,6 +12,7 @@ export default class InfoPartidos extends Component {
   }
 
   golEquipo(num) {
+    document.getElementById("fin").scrollIntoView();
     if (num === 2) {
       const goles = this.state.marcador2 + 1;
       this.setState({
@@ -31,7 +32,7 @@ export default class InfoPartidos extends Component {
   }
   render() {
     return (
-      <div className="infoPartidos" >
+      <div className="infoPartidos" id="p1">
         <h1 className="titulo">Lleva el puntaje de tu partido!</h1>
         <div className="puntaje">
           <h className="reservaPartido">Reserva: 1</h><br />
