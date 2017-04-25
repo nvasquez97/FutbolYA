@@ -89,7 +89,6 @@
           });
         }
       }
-      document.getElementById("fin").scrollIntoView();
     }
     render() {
       Meteor.subscribe('reservas');

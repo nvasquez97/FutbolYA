@@ -25,7 +25,6 @@ export default class InfoReservas extends Component {
     document.getElementsByClassName('infoPartidos')[0].style.display = 'block';
   }
   obtenerTodasReservas () {
-    document.getElementById("fin").scrollIntoView();
     if (this.state.idReserva > 0) {
       const lista = Reservas.find({ key: parseInt(this.state.idReserva) }).fetch();
       const Res = lista[0];
@@ -42,7 +41,6 @@ export default class InfoReservas extends Component {
         partido: partid,
       },
       );
-      document.getElementById("fin").scrollIntoView();
     }
     else if (this.props.idR > 0) {
       const lista = Reservas.find({ key: this.props.idR }).fetch();
@@ -59,11 +57,7 @@ export default class InfoReservas extends Component {
       this.setState({
         partido: partid,
       });
-      document.getElementById("fin").scrollIntoView();
-    }
-    if(this.state.reserva!==null)
-    {
-      document.getElementById("fin").scrollIntoView();
+      console.log(partid);
     }
   }
 
@@ -118,7 +112,7 @@ export default class InfoReservas extends Component {
     Meteor.subscribe('canchas');
     Meteor.subscribe('partidos');
     return (
-      <div className="inforr" id="yt">
+      <div className="inforr" >
         <div className="container">
           <div className="informacion">
             <div className="infoI">

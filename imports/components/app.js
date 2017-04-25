@@ -61,7 +61,6 @@
           </div>
           <div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)} /></div>
           <InfoReservas idR={this.state.idReserva} />
-          <div id="fin"></div>
         </div>
       );
     }
