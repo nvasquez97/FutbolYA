@@ -29,6 +29,7 @@
     irACuadro() {
       document.getElementsByClassName('inforr')[0].style.display = 'block';
       document.getElementsByClassName('localidad')[0].style.display = 'none';
+      document.getElementsByClassName('oculto')[0].style.display = 'none';
       document.getElementById("yt").scrollIntoView();
     }
     infoReserva(num, idC) {

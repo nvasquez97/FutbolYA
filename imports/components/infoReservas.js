@@ -149,6 +149,9 @@ export default class InfoReservas extends Component {
                            </tbody>
                          </table>
                        </div>
+                       <a href="#partido"><p className="baja">
+                        ¡Hay más!   <i className="fa fa-sort-down" /></p>
+                       </a>
                        <InfoPartidos partido={this.state.partido} idreserva={this.state.idReserva} />
                      </div>)
                 :

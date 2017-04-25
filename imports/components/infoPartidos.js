@@ -32,7 +32,7 @@ export default class InfoPartidos extends Component {
   }
   render() {
     return (
-      <div className="infoPartidos" >
+      <div className="infoPartidos" id="partido">
         <h1 className="titulo">Lleva el puntaje de tu partido!</h1>
         <div className="puntaje">
           <h className="reservaPartido">Reserva: 1</h><br />
