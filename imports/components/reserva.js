@@ -16,7 +16,7 @@
 
     reservarCupo() {
       const cuposN = this.props.reserva.cupos -1;
-      Meteor.call('reservas.update', this.props.reserva._id, this.props.reserva.key,this.props.reserva.precio, cuposN, this.props.reserva.id_usuario, this.props.reserva.id_canchas); 
+      Meteor.call('reservas.update', this.props.reserva._id, this.props.reserva.key,this.props.reserva.precio, cuposN, this.props.reserva.id_usuario, this.props.reserva.id_cancha); 
       this.props.infoReserva(this.props.reserva.key,this.props.reserva.id_cancha);
     }
 
