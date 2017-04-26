@@ -33,7 +33,7 @@ export default class InfoReservas extends Component {
         reserva: lista[0],
       });
       this.nombreCancha(Res);
-      this.nombreLocalidad(Res);      
+      this.nombreLocalidad(Res);    
       const part = Partidos.find({ id_reserva: parseInt (this.state.idReserva) }).fetch();
       const partid = part[0];
       this.setState({
@@ -57,7 +57,7 @@ export default class InfoReservas extends Component {
         partido: partid,
       });
     }
-    document.getElementById("tabla").scrollIntoView();
+    document.getElementById('tabla').scrollIntoView();
   }
 
   nombreCancha(reserv) {
@@ -67,7 +67,7 @@ export default class InfoReservas extends Component {
       this.setState({
         nombreCancha: nombreC.nombreSitio,
       });
-      document.getElementById("tabla").scrollIntoView();
+      document.getElementById('tabla').scrollIntoView();
     }
     catch (e) {
       console.log('Undefined');
@@ -82,7 +82,7 @@ export default class InfoReservas extends Component {
       this.setState({
         nombreLoc: nombre.ubicacion,
       });
-      document.getElementById("tabla").scrollIntoView();
+      document.getElementById('tabla').scrollIntoView();
     }
     catch (e) {
       console.log('Undefined');
