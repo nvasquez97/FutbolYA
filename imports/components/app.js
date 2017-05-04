@@ -1,4 +1,5 @@
   'use strict';
+  import { Meteor } from 'meteor/meteor';
   import React, { Component } from 'react';
   import FutbolYa from './futbolYa';
   import Localidades from './localidades';

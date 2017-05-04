@@ -1,4 +1,5 @@
 'use strict';
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 
 export default class Cancha extends Component {

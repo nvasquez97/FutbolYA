@@ -1,4 +1,5 @@
 'use strict';
+import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 
 export default class InfoPartidos extends Component {
@@ -28,7 +29,7 @@ export default class InfoPartidos extends Component {
             // update partidos
             Meteor.call('partidos.update', this.props.partido._id, this.props.partido.key, goles, this.state.marcador2, parseInt(this.props.idreserva));
     }
-    document.getElementById("fin").scrollIntoView();
+    document.getElementById('fin').scrollIntoView();
   }
   render() {
     return (
