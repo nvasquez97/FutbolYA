@@ -5,8 +5,6 @@
   import Localidades from './localidades';
   import Buscar from './buscar';
   import InfoReservas from './infoReservas';
-  import Cancha from './cancha';
-  import InfoPartidos from './infoPartidos';
   import { Reservas } from '../api/reservas.js';
 
   export default class App extends Component {
@@ -31,7 +29,7 @@
       document.getElementsByClassName('inforr')[0].style.display = 'block';
       document.getElementsByClassName('localidad')[0].style.display = 'none';
       document.getElementsByClassName('oculto')[0].style.display = 'none';
-      document.getElementById("yt").scrollIntoView();
+      document.getElementById('yt').scrollIntoView();
     }
     infoReserva(num, idC) {
       const reser = Reservas.find({ key: num }).fetch()[0];
@@ -49,7 +47,7 @@
         reserva: tipo,
         localidadId: num,
       });
-      document.getElementById("fin").scrollIntoView();
+      document.getElementById('fin').scrollIntoView();
     }
 
     render() {
@@ -64,7 +62,7 @@
           </div>
           <div className="buscar"><Buscar reserva={this.state.reserva} localidad={this.state.localidadId} infoReserva={this.infoReserva.bind(this)} /></div>
           <InfoReservas idR={this.state.idReserva} />
-          <div id="fin"></div>
+          <div id="fin" />
         </div>
       );
     }
