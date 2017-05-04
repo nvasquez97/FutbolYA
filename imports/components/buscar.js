@@ -57,7 +57,7 @@
             descripcion: 'Mira reservas para ',
             localidad: '',
           });
-          document.getElementById("fin").scrollIntoView();
+          document.getElementById('fin').scrollIntoView();
         }
         else {
           this.setState({
@@ -67,7 +67,7 @@
             localidad: ' en tu localidad',
             descripcion: 'No hay reservas para ',
           });
-          document.getElementById("fin").scrollIntoView();
+          document.getElementById('fin').scrollIntoView();
         }
        }
       else {
@@ -80,7 +80,7 @@
             localidad: '',
             descripcion: 'Intenta reclutar en: ',
           });
-          document.getElementById("fin").scrollIntoView();
+          document.getElementById('fin').scrollIntoView();
         }
         else {
           this.setState({
@@ -90,7 +90,7 @@
             localidad: ' en tu localidad',
             descripcion: 'No hay canchas de ',
           });
-          document.getElementById("fin").scrollIntoView();
+          document.getElementById('fin').scrollIntoView();
         }
       }
     }
